@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:lines="10"
-            android:text="Mensage: eL alumno debe selecionar de la lista el item de su maestro"
+            android:text="Mensage: El alumno debe selecionar de la lista el item de su maestro"
             android:textAlignment="center"
             android:textSize="25sp" />
     </ScrollView>
