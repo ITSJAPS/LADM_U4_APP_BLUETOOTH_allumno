@@ -15,6 +15,7 @@ class Main1Activity : AppCompatActivity() {
         binding=ActivityMain1Binding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        this.setTitle("Alumno, Bienvenido!")
 
         binding.registrar.setOnClickListener {
             if (binding.noControl.text.equals("")) {
@@ -59,7 +60,7 @@ class Main1Activity : AppCompatActivity() {
             ).addOnCompleteListener {
                 dialogo.dismiss()
                 if (it.isSuccessful){
-                    var ventana = Intent(this,EnvioAsistencia::class.java)
+                    var ventana = Intent(this,MainActivity_Principal::class.java)
                     var usuario = FirebaseAuth.getInstance().currentUser
                     var partes:List<String>
                     usuario.let {
@@ -69,23 +70,24 @@ class Main1Activity : AppCompatActivity() {
                     startActivity(ventana)
                     finish()
                     return@addOnCompleteListener
+                }else {
+                    AlertDialog.Builder(this)
+                        .setMessage("Error: No se encontró el No. Control")
+                        .show()
                 }
-                AlertDialog.Builder(this)
-                    .setMessage("Error: No se encontró el No. Control")
-                    .show()
             }
             binding.noControl.text.clear()
 
         }
         if (FirebaseAuth.getInstance().currentUser!=null){
             //Sesion activa
-            var ventana = Intent(this,EnvioAsistencia::class.java)
+            var ventana = Intent(this,MainActivity_Principal::class.java)
             var usuario = FirebaseAuth.getInstance().currentUser
             var partes:List<String>
             usuario.let {
                 partes = usuario?.email.toString().split("@")
             }
-            ventana.putExtra("No.Control",partes.get(0))
+            ventana.putExtra("control",partes.get(0).toString())
             startActivity(ventana)
             finish()
         }

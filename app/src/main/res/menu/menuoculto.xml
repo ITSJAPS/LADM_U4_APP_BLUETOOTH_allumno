@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="acerca de..." android:id="@+id/acerca"/>
+    <item android:title="Salir" android:id="@+id/salir"/>
+    <item android:title="Cerrar Secion" android:id="@+id/secion"/>
+</menu>
