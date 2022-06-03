@@ -52,13 +52,24 @@ class MainActivity_Principal : AppCompatActivity() {
     private val CHOOSER_FILE=112
     private val REQUEST_PERMESSIONS_LOC = 222
     private val REQUEST_PERMESSIONS_EXTERNAL = 222
+    var noControl=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding= ActivityMainPrincipalBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val noControl = intent.getStringExtra("control").toString()
+        if (FirebaseAuth.getInstance().currentUser!=null) {
+            //Sesion activa
+            var usuario = FirebaseAuth.getInstance().currentUser
+            var partes: List<String>
+            usuario.let {
+                partes = usuario?.email.toString().split("@")
+            }
+            noControl=partes.get(0).toString()
+        }
+
+        //val noControl = intent.getStringExtra("control").toString()
         this.setTitle("ChatJAPS Alumno $noControl")
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
