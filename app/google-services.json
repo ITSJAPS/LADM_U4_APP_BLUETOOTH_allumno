@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "276771506087",
+    "project_id": "u4asistecia",
+    "storage_bucket": "u4asistecia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276771506087:android:cd63f15231a1a107901882",
+        "android_client_info": {
+          "package_name": "com.example.ladm_u4_app_bluetooth_allumno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276771506087-kfmrlj7vgtmhg6lpructu6tgcoeedbcc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOgSJyXTI-rYCOGns0ytvjTcN6hQTPlqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276771506087-kfmrlj7vgtmhg6lpructu6tgcoeedbcc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
